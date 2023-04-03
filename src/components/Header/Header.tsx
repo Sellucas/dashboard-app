@@ -145,6 +145,7 @@ const Header = (props: HeaderProps) => {
               <Typography>Signed in as {session?.user?.email} </Typography>
             </Box>
           )}
+          
           <ThemeToggleButton ColorModeContext={ColorModeContext} />
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open profile settings">
