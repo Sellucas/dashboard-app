@@ -1,15 +1,9 @@
 import React from "react";
-import {
-  Box,
-  createTheme,
-  CssBaseline,
-  IconButton,
-  ThemeProvider,
-  useTheme,
-} from "@mui/material";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { SessionProvider } from "next-auth/react";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
+import darkTheme from "@/theme/darkTheme";
+import lightTheme from "@/theme/lightTheme";
+import Header from "@/components/Header/Header";
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -24,46 +18,24 @@ const App = ({ Component, pageProps: { session, ...pageProps } }) => {
     []
   );
 
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
+  const darkThemeChosen = React.useMemo(
+    () => createTheme({ ...darkTheme }),
+    [mode]
+  );
+
+  const lightThemeChosen = React.useMemo(
+    () => createTheme({ ...lightTheme }),
     [mode]
   );
 
   return (
     <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider
+        theme={mode === "dark" ? darkThemeChosen : lightThemeChosen}
+      >
         <SessionProvider session={session}>
-          <Box
-            sx={{
-              display: "flex",
-              width: "100%",
-              alignItems: "center",
-              justifyContent: "center",
-              bgcolor: "background.default",
-              color: "text.primary",
-              borderRadius: 1,
-              p: 3,
-            }}
-          >
-            {theme.palette.mode} mode
-            <IconButton
-              sx={{ ml: 1 }}
-              onClick={colorMode.toggleColorMode}
-              color="inherit"
-            >
-              {theme.palette.mode === "dark" ? (
-                <Brightness7Icon />
-              ) : (
-                <Brightness4Icon />
-              )}
-            </IconButton>
-          </Box>
           <CssBaseline />
+          <Header ColorModeContext={ColorModeContext}/>
           <Component {...pageProps} />
         </SessionProvider>
       </ThemeProvider>

@@ -13,11 +13,16 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { signIn, signOut, useSession } from "next-auth/react";
+import ThemeToggleButton from "../ThemeToggleButton/ThemeToggleButton";
 
 const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const Header = () => {
+export type HeaderProps = {
+  ColorModeContext: React.Context<{ toggleColorMode: () => void }>;
+};
+
+const Header = (props: HeaderProps) => {
+  const { ColorModeContext } = props;
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -135,7 +140,7 @@ const Header = () => {
           <Box sx={{ paddingRight: 5 }}>
             <Typography>Signed in as {session?.user?.email} </Typography>
           </Box>
-
+          <ThemeToggleButton ColorModeContext={ColorModeContext} />
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open profile settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

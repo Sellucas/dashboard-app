@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Dashboard from "@/pages/dashboard";
-import Header from "@/components/Header";
 import SideMenu from "@/components/SideMenu";
 import Login from "@/components/Login";
 import { useSession } from "next-auth/react";
@@ -17,7 +16,7 @@ const Home: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={scss.main}>
-        <Header />
+        
         {session && (
           <>
             <SideMenu />
