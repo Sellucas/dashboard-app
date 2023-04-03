@@ -14,6 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { signIn, signOut, useSession } from "next-auth/react";
 import ThemeToggleButton from "../ThemeToggleButton/ThemeToggleButton";
+import { useMediaQuery } from "@mui/material";
 
 const pages = ["Products", "Pricing", "Blog"];
 
@@ -46,6 +47,8 @@ const Header = (props: HeaderProps) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const tabletCheck = useMediaQuery("(min-width: 768px");
 
   return (
     <AppBar position="static">
@@ -137,9 +140,11 @@ const Header = (props: HeaderProps) => {
             ))}
           </Box>
 
-          <Box sx={{ paddingRight: 5 }}>
-            <Typography>Signed in as {session?.user?.email} </Typography>
-          </Box>
+          {tabletCheck && (
+            <Box sx={{ paddingRight: 5 }}>
+              <Typography>Signed in as {session?.user?.email} </Typography>
+            </Box>
+          )}
           <ThemeToggleButton ColorModeContext={ColorModeContext} />
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open profile settings">
