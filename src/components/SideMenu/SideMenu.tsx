@@ -26,6 +26,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { textChangeRangeNewSpan } from "typescript";
 
 const drawerWidth = 240;
 
@@ -68,6 +69,11 @@ const SideMenu = () => {
     setOpen(!open);
   };
 
+  const handleListItemButtonClick = (text: string) => {
+    text === "Sign Out" ? signOut() : null;
+    setOpen(false);
+  };
+
   return (
     <Drawer
       variant="permanent"
@@ -107,6 +113,9 @@ const SideMenu = () => {
               href={`/dashboard/${menuRouteList[index]}`}
             >
               <ListItemButton
+                onClick={() => handleListItemButtonClick(text)}
+                title={text}
+                arial-label={text}
                 sx={{
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
