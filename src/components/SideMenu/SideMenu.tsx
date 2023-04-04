@@ -10,8 +10,8 @@ import EqualizerIcon from "@mui/icons-material/Equalizer";
 import { Settings } from "@mui/icons-material";
 import NextLink from "next/link";
 import scss from "./SideMenu.module.scss";
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
 import { signOut } from "next-auth/react";
 
 import {
@@ -50,9 +50,19 @@ const closedMixin = (theme: Theme): CSSObject => ({
   },
 });
 
+const menuRouteList = ["data", "profile", "settings", ""];
+const menuListTranslations = ["Data", "Profile", "Settings", "Sign Out"];
+const menuListIcons = [
+  <EqualizerIcon />,
+  <Person2Icon />,
+  <Settings />,
+  <ExitToAppIcon />,
+];
+
 const SideMenu = () => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const mobileCheck = useMediaQuery("(min-width: 600px)");
 
   const handleDrawerToggle = () => {
     setOpen(!open);
@@ -61,78 +71,66 @@ const SideMenu = () => {
   return (
     <Drawer
       variant="permanent"
+      anchor="left"
       open={open}
       sx={{
         width: drawerWidth,
-        flexShrink: 0,
-        whiteSpace: "nowrap",
-        boxSizing: "border-box",
-        ...(open && {
-          ...openedMixin(theme),
-          "& .MuiDrawer-paper": openedMixin(theme),
-        }),
-        ...(!open && {
-          ...closedMixin(theme),
-          "& .MuiDrawer-paper": closedMixin(theme),
-        }),
+        [`& .MuiDrawer-paper`]: {
+          top: mobileCheck ? 64 : 57,
+          flexShrink: 0,
+          whiteSpace: "nowrap",
+          boxSizing: "border-box",
+
+          ...(open && {
+            ...openedMixin(theme),
+            "& .MuiDrawer-paper": openedMixin(theme),
+          }),
+          ...(!open && {
+            ...closedMixin(theme),
+            "& .MuiDrawer-paper": closedMixin(theme),
+          }),
+        },
       }}
     >
-      <div>
+      <div className={scss.drawerHeader}>
         <IconButton onClick={handleDrawerToggle}>
-          {theme.direction === "rtl" ? (
-            <ChevronRightIcon />
-          ) : (
-            <ChevronLeftIcon />
-          )}
+          {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
         </IconButton>
       </div>
+
       <Divider />
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+        {menuListTranslations.map((text, index) => (
           <ListItem key={text} disablePadding sx={{ display: "block" }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-              }}
+            <NextLink
+              className={scss.link}
+              href={`/dashboard/${menuRouteList[index]}`}
             >
-              <ListItemIcon
+              <ListItemButton
                 sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
                 }}
               >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding sx={{ display: "block" }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
-                }}
-              >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  {menuListIcons[index]}
+                </ListItemIcon>
+                <ListItemText
+                  primary={text}
+                  sx={{
+                    color: theme.palette.text.primary,
+                    opacity: open ? 1 : 0,
+                  }}
+                />
+              </ListItemButton>
+            </NextLink>
           </ListItem>
         ))}
       </List>
