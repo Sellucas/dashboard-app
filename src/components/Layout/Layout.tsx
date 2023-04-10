@@ -16,7 +16,10 @@ const Layout = (props: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={scss.layout}>
+      <main
+        className={scss.layout}
+        style={{ padding: session ? "0 24px 0 80px" : 0 }}
+      >
         {session && <SideMenu />}
         {props.children}
       </main>
