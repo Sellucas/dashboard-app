@@ -3,6 +3,7 @@ import React from "react";
 import SideMenu from "../SideMenu/SideMenu";
 import scss from "./Layout.module.scss";
 import Head from "next/head";
+import Footer from "../Footer/Footer";
 
 const Layout = (props: any) => {
   const { data: session } = useSession();
@@ -22,6 +23,7 @@ const Layout = (props: any) => {
       >
         {session && <SideMenu />}
         {props.children}
+        <Footer />
       </main>
     </>
   );

@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import React from "react";
 import DataRibbon from "@/components/Dashboard/DataRibbon/DataRibbon";
 import TransactionPerDay from "@/components/Dashboard/TransactionPerDay/TransactionPerDay";
@@ -7,11 +7,10 @@ import TransactionBottomRow from "@/components/Dashboard/TransactionBottomRow/Tr
 const Dashboard = () => {
   return (
     <Box>
-      {/*Data Ribbon - showing numerical stats */}
-      <DataRibbon />
-      {/*TransactionsPerDay - graph - numerical cards */}
-      <TransactionPerDay />
-      {/*Transaction Doughnut Charts Bottom Row - a few doughnut charts to break down some data into fractions */}
+      <Grid container gap={4} marginTop={2}>
+        <DataRibbon />
+        <TransactionPerDay />
+      </Grid>
       <TransactionBottomRow />
     </Box>
   );

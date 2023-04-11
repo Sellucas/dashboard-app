@@ -8,25 +8,25 @@ const TransactionBottomRow = () => {
   return (
     <Grid container className={scss.bottomRow}>
       <Grid>
-        <Paper>
+        <Paper className={scss.dataCard}>
           <p>Transactions per user type</p>
           <DataChart type={"doughnut"} data={doughnutChartData} />
         </Paper>
       </Grid>
       <Grid>
-        <Paper>
+        <Paper className={scss.dataCard}>
           <p>Transactions per user type</p>
           <DataChart type={"doughnut"} data={doughnutChartData} />
         </Paper>
       </Grid>
       <Grid>
-        <Paper>
+        <Paper className={scss.dataCard}>
           <p>Transactions per user type</p>
           <DataChart type={"doughnut"} data={doughnutChartData} />
         </Paper>
       </Grid>
       <Grid>
-        <Paper>
+        <Paper className={scss.dataCard}>
           <p>Transactions per user type</p>
           <DataChart type={"doughnut"} data={doughnutChartData} />
         </Paper>
