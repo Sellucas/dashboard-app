@@ -1,6 +1,8 @@
 import { Card, Grid, Paper, Typography, useTheme } from "@mui/material";
 import React from "react";
 import scss from "./TransactionPerDay.module.scss";
+import DataChart from "@/components/DataChart/DataChart";
+import { lineChartData } from "@/components/mockData";
 
 export type TransactionCardType = {
   title: string;
@@ -8,12 +10,7 @@ export type TransactionCardType = {
   changeValue: string;
 };
 
-export type TransactionPerDayprops = {
-  data: TransactionCardType;
-};
-
-const TransactionPerDay = (props: TransactionPerDayprops) => {
-  const { data } = props;
+const TransactionPerDay = () => {
   const theme = useTheme();
 
   return (
@@ -21,7 +18,7 @@ const TransactionPerDay = (props: TransactionPerDayprops) => {
       <Paper className={scss.transactions}>
         <div className={scss.chart}>
           <Typography>Transaction per day</Typography>
-          {/* CHART GOES HERE */}
+          <DataChart type={"line"} data={lineChartData} />
         </div>
         <div className={scss.cardWrapper}>
           <Card className={scss.card} variant={"outlined"}>
@@ -30,7 +27,9 @@ const TransactionPerDay = (props: TransactionPerDayprops) => {
             </div>
             <div className={scss.cardValue}>
               <Typography>1.275</Typography>
-              <Typography color={theme.palette.success.main} fontSize={14}>428.7%</Typography>
+              <Typography color={theme.palette.success.main} fontSize={14}>
+                428.7%
+              </Typography>
             </div>
           </Card>
           <Card className={scss.card} variant={"outlined"}>
@@ -39,7 +38,9 @@ const TransactionPerDay = (props: TransactionPerDayprops) => {
             </div>
             <div className={scss.cardValue}>
               <Typography>4.40%</Typography>
-              <Typography color={theme.palette.success.main} fontSize={14}>899.4%</Typography>
+              <Typography color={theme.palette.success.main} fontSize={14}>
+                899.4%
+              </Typography>
             </div>
           </Card>
           <Card className={scss.card} variant={"outlined"}>
@@ -48,7 +49,9 @@ const TransactionPerDay = (props: TransactionPerDayprops) => {
             </div>
             <div className={scss.cardValue}>
               <Typography>0</Typography>
-              <Typography color={theme.palette.success.main} fontSize={14}>0</Typography>
+              <Typography color={theme.palette.success.main} fontSize={14}>
+                0
+              </Typography>
             </div>
           </Card>
         </div>
