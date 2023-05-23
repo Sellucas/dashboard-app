@@ -10,22 +10,28 @@ import {
   Typography,
 } from "@mui/material";
 import { useSession } from "next-auth/react";
-import React from "react";
+import React, { useState } from "react";
 
 const Profile = () => {
   const { data: session } = useSession();
   const handleSubmit = () => {};
 
-  const formData = {
+  const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
     receiveEmails: false,
-  };
+  });
 
-  const handleFormChange = () => {};
+  const handleFormChange = (event) => {
+    const { name, value, checked } = event.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: name === "receiveEmails" ? checked : value,
+    }));
+  };
 
   return (
     <>
