@@ -14,23 +14,31 @@ import React, { useState } from "react";
 
 const Profile = () => {
   const { data: session } = useSession();
-  const handleSubmit = () => {};
+  const names = session?.user?.name ? session.user.name.split(" ") : [];
+  const firsName = names[0];
+  const lastName = names.length > 1 ? names[names.length - 1] : "";
+  const emailAddress = session?.user?.email;
 
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
+    firstName: firsName,
+    lastName: lastName,
+    email: emailAddress,
     password: "",
     confirmPassword: "",
     receiveEmails: false,
   });
 
-  const handleFormChange = (event) => {
+  const handleFormChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, checked } = event.target;
     setFormData((prevState) => ({
       ...prevState,
       [name]: name === "receiveEmails" ? checked : value,
     }));
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log(formData);
   };
 
   return (
