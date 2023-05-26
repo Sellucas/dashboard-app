@@ -15,7 +15,7 @@ const DataCard = (props: DataCardProps) => {
   return (
     <Paper className={scss.dataCard}>
       <div className={scss.header}>
-        <Typography fontSize={"h6"} color={"lightslategrey"}>
+        <Typography fontSize={"16px"} color={"lightslategrey"}>
           {title}
         </Typography>
         <Tooltip
@@ -30,7 +30,7 @@ const DataCard = (props: DataCardProps) => {
           </IconButton>
         </Tooltip>
       </div>
-      <Typography fontSize={"h4"}>{value}</Typography>
+      <Typography fontSize={"22px"}>{value}</Typography>
     </Paper>
   );
 };

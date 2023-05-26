@@ -4,10 +4,17 @@ export const lineChartData = {
   labels: months({ count: 12 }),
   datasets: [
     {
-      label: "Transactions",
+      label: "Online sales",
       data: [65, 59, 80, 81, 56, 55, 60, 49, 112, 72, 52, 43],
       fill: false,
       borderColor: "rgb(75, 192, 192)",
+      tension: 0.1,
+    },
+    {
+      label: "Face-to-face sales",
+      data: [32, 44, 89, 110, 30, 23, 45, 49, 84, 10, 37, 41],
+      fill: false,
+      borderColor: "rgb(192, 75, 75)",
       tension: 0.1,
     },
   ],

@@ -17,7 +17,7 @@ const TransactionPerDay = () => {
     <Grid container gap={2} className={scss.wrapper}>
       <Paper className={scss.transactions}>
         <div className={scss.chart}>
-          <Typography>Transaction per day</Typography>
+          <Typography>Transaction per month</Typography>
           <DataChart type={"line"} data={lineChartData} />
         </div>
         <div className={scss.cardWrapper}>
@@ -26,9 +26,9 @@ const TransactionPerDay = () => {
               <Typography>Total Products</Typography>
             </div>
             <div className={scss.cardValue}>
-              <Typography>1.275</Typography>
+              <Typography fontSize={"22px"}>1.378</Typography>
               <Typography color={theme.palette.success.main} fontSize={14}>
-                428.7%
+                ▲ 428.7%
               </Typography>
             </div>
           </Card>
@@ -37,9 +37,9 @@ const TransactionPerDay = () => {
               <Typography>Buy-to-detail</Typography>
             </div>
             <div className={scss.cardValue}>
-              <Typography>4.40%</Typography>
-              <Typography color={theme.palette.success.main} fontSize={14}>
-                899.4%
+              <Typography fontSize={"22px"}>4.40%</Typography>
+              <Typography color={theme.palette.error.main} fontSize={14}>
+                ▼ 38.4%
               </Typography>
             </div>
           </Card>
@@ -48,8 +48,8 @@ const TransactionPerDay = () => {
               <Typography>Refunds</Typography>
             </div>
             <div className={scss.cardValue}>
-              <Typography>0</Typography>
-              <Typography color={theme.palette.success.main} fontSize={14}>
+              <Typography fontSize={"22px"}>0</Typography>
+              <Typography color={theme.palette.warning.light} fontSize={14}>
                 0
               </Typography>
             </div>
