@@ -14,7 +14,7 @@ export const lineChartData = {
       label: "Face-to-face sales",
       data: [32, 44, 89, 110, 30, 23, 45, 49, 84, 10, 37, 41],
       fill: false,
-      borderColor: "rgb(192, 75, 75)",
+      borderColor: "rgb(75, 192, 98)",
       tension: 0.1,
     },
   ],

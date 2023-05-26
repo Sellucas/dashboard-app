@@ -23,10 +23,10 @@ const TransactionPerDay = () => {
         <div className={scss.cardWrapper}>
           <Card className={scss.card} variant={"outlined"}>
             <div className={scss.cardTitle}>
-              <Typography>Total Products</Typography>
+              <Typography>Average Revenue</Typography>
             </div>
             <div className={scss.cardValue}>
-              <Typography fontSize={"22px"}>1.378</Typography>
+              <Typography fontSize={"22px"}>$1.378,00</Typography>
               <Typography color={theme.palette.success.main} fontSize={14}>
                 ▲ 428.7%
               </Typography>

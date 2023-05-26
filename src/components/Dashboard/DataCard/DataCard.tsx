@@ -30,7 +30,7 @@ const DataCard = (props: DataCardProps) => {
           </IconButton>
         </Tooltip>
       </div>
-      <Typography fontSize={"22px"}>{value}</Typography>
+      <Typography fontWeight={'bold'} fontSize={"24px"}>{value}</Typography>
     </Paper>
   );
 };
