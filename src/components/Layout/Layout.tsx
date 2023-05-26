@@ -23,8 +23,8 @@ const Layout = (props: any) => {
       >
         {session && <SideMenu />}
         {props.children}
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 };

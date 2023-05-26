@@ -1,5 +1,4 @@
 import Dashboard from "@/pages/dashboard";
-import SideMenu from "@/components/SideMenu";
 import Login from "@/components/Login";
 import { useSession } from "next-auth/react";
 import scss from "./Home.module.scss";
