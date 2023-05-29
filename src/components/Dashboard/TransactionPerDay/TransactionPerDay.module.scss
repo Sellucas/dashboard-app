@@ -12,6 +12,10 @@ $breakPoint: 1000px;
   @media screen and (min-width: $breakPoint) {
     display: flex;
   }
+
+  p {
+    font-family: "Open Sans", sans-serif;
+  }
 }
 
 .chart {
@@ -37,14 +41,25 @@ $breakPoint: 1000px;
 }
 
 .card {
-  text-align: center;
+  text-align: left;
   padding: 1rem;
   border-radius: 8px;
   width: 100%;
 
   @media screen and (min-width: $breakPoint) {
-    padding: 0.5rem;
+    padding: 0.8rem;
   }
+}
+
+.cardSection {
+  display: flex;
+}
+
+.cardIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
 }
 
 .cardTitle {
@@ -53,4 +68,16 @@ $breakPoint: 1000px;
 
 .cardValue {
   font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 0;
+
+  p:nth-child(2) {
+    padding-left: 5px;
+  }
+}
+
+.cardLink {
+  display: flex;
 }

@@ -20,17 +20,61 @@ export const lineChartData = {
   ],
 };
 
-export const doughnutChartData = {
-  labels: ["Red", "Blue", "Yellow"],
+export const doughnutChartDataUserType = {
+  labels: ["Person", "Company", "Industry", "Commerce", "Personal Sales"],
   datasets: [
     {
       label: "Transactions Dataset",
-      data: [300, 50, 100],
+      data: [200, 50, 400, 480, 90],
       backgroundColor: [
-        "rgb(244, 99, 132)",
-        "rgb(54, 162, 235)",
-        "rgb(255, 205, 86)",
+        "rgb(0,171,197)",
+        "rgb(178,229,237)",
+        "rgb(255,255,0)",
+        "rgb(255,146,72)",
+        "rgb(214,45,32)",
       ],
+      hoverOffset: 4,
+    },
+  ],
+};
+
+export const doughnutChartDataRevenue = {
+  labels: ["Earn", "Spend"],
+  datasets: [
+    {
+      label: "Transactions Dataset",
+      data: [80, 20],
+      backgroundColor: ["rgb(0,171,197)", "rgb(255,255,0)"],
+      hoverOffset: 4,
+    },
+  ],
+};
+
+export const doughnutChartDataCountry = {
+  labels: ["Brazil", "France", "China", "Japan", "USA"],
+  datasets: [
+    {
+      label: "Transactions Dataset",
+      data: [100, 50, 210, 330, 190],
+      backgroundColor: [
+        "rgb(0,171,197)",
+        "rgb(178,229,237)",
+        "rgb(255,255,0)",
+        "rgb(255,146,72)",
+        "rgb(214,45,32)",
+      ],
+      hoverOffset: 4,
+    },
+  ],
+};
+
+export const doughnutChartDataCustomerRetention = {
+  labels: ["Loyal Customers", "Non-Loyal Customers"],
+  datasets: [
+    {
+      label: "Transactions Dataset",
+      data: [70, 30],
+      backgroundColor: ["rgb(0,171,197)", "rgb(178,229,237)"],
       hoverOffset: 4,
     },
   ],

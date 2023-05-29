@@ -3,6 +3,10 @@ import React from "react";
 import scss from "./TransactionPerDay.module.scss";
 import DataChart from "@/components/DataChart/DataChart";
 import { lineChartData } from "@/components/mockData";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import FolderCopyIcon from "@mui/icons-material/FolderCopy";
+import LaunchIcon from "@mui/icons-material/Launch";
 
 export type TransactionCardType = {
   title: string;
@@ -22,35 +26,77 @@ const TransactionPerDay = () => {
         </div>
         <div className={scss.cardWrapper}>
           <Card className={scss.card} variant={"outlined"}>
-            <div className={scss.cardTitle}>
-              <Typography>Average Revenue</Typography>
+            <div className={scss.cardSection}>
+              <div className={scss.cardIcon}>
+                <Typography>
+                  <TrendingUpIcon fontSize="large" />
+                </Typography>
+              </div>
+              <div>
+                <div className={scss.cardTitle}>
+                  <Typography color={"lightslategrey"}>Average Revenue</Typography>
+                </div>
+                <div className={scss.cardValue}>
+                  <Typography fontSize={"22px"}>$1.378</Typography>
+                  <Typography color={theme.palette.success.main} fontSize={14}>
+                    ▲ 428.7%
+                  </Typography>
+                </div>
+              </div>
             </div>
-            <div className={scss.cardValue}>
-              <Typography fontSize={"22px"}>$1.378,00</Typography>
-              <Typography color={theme.palette.success.main} fontSize={14}>
-                ▲ 428.7%
+            <div className={scss.cardLink}>
+              <Typography color={theme.palette.success.main} fontSize={"12px"}>
+                <LaunchIcon fontSize="inherit" /> Click Here
               </Typography>
             </div>
           </Card>
           <Card className={scss.card} variant={"outlined"}>
-            <div className={scss.cardTitle}>
-              <Typography>Buy-to-detail</Typography>
+            <div className={scss.cardSection}>
+              <div className={scss.cardIcon}>
+                <Typography>
+                  <ShoppingCartIcon fontSize="large" />
+                </Typography>
+              </div>
+              <div>
+                <div className={scss.cardTitle}>
+                  <Typography color={"lightslategrey"}>Buy-to-Detail</Typography>
+                </div>
+                <div className={scss.cardValue}>
+                  <Typography fontSize={"22px"}>11,4%</Typography>
+                  <Typography color={theme.palette.error.main} fontSize={14}>
+                    ▼ 4.7%
+                  </Typography>
+                </div>
+              </div>
             </div>
-            <div className={scss.cardValue}>
-              <Typography fontSize={"22px"}>4.40%</Typography>
-              <Typography color={theme.palette.error.main} fontSize={14}>
-                ▼ 38.4%
+            <div className={scss.cardLink}>
+              <Typography color={theme.palette.success.main} fontSize={"12px"}>
+                <LaunchIcon fontSize="inherit" /> Click Here
               </Typography>
             </div>
           </Card>
           <Card className={scss.card} variant={"outlined"}>
-            <div className={scss.cardTitle}>
-              <Typography>Refunds</Typography>
+            <div className={scss.cardSection}>
+              <div className={scss.cardIcon}>
+                <Typography>
+                  <FolderCopyIcon fontSize="large" />
+                </Typography>
+              </div>
+              <div>
+                <div className={scss.cardTitle}>
+                  <Typography color={"lightslategrey"}>Refund</Typography>
+                </div>
+                <div className={scss.cardValue}>
+                  <Typography fontSize={"22px"}>19</Typography>
+                  <Typography color={theme.palette.error.main} fontSize={14}>
+                    ▼ 14.7%
+                  </Typography>
+                </div>
+              </div>
             </div>
-            <div className={scss.cardValue}>
-              <Typography fontSize={"22px"}>0</Typography>
-              <Typography color={theme.palette.warning.light} fontSize={14}>
-                0
+            <div className={scss.cardLink}>
+              <Typography color={theme.palette.success.main} fontSize={"12px"}>
+                <LaunchIcon fontSize="inherit" /> Click Here
               </Typography>
             </div>
           </Card>
