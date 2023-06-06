@@ -81,3 +81,20 @@ $breakPoint: 1000px;
 .cardLink {
   display: flex;
 }
+
+.chartHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.chartFilter {
+  p {
+    padding-right: 15px;
+  }
+}

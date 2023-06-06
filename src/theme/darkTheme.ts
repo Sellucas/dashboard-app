@@ -4,10 +4,10 @@ const darkTheme: ThemeOptions = {
   palette: {
     mode: "dark",
     primary: {
-      main: "#ff0000",
+      main: "#010001",
     },
     secondary: {
-      main: "#7080ff",
+      main: "#161617",
     },
   },
 };

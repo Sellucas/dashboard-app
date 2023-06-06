@@ -12,6 +12,9 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import scss from "./Table.module.scss";
+import { useTheme } from "@mui/material";
 
 function createData(
   name: string,
@@ -44,6 +47,7 @@ function createData(
 }
 
 function Row(props: { row: ReturnType<typeof createData> }) {
+  const theme = useTheme();
   const { row } = props;
   const [open, setOpen] = React.useState(false);
 
@@ -62,10 +66,10 @@ function Row(props: { row: ReturnType<typeof createData> }) {
         <TableCell component="th" scope="row">
           {row.name}
         </TableCell>
-        <TableCell align="right">{row.calories}</TableCell>
-        <TableCell align="right">{row.fat}</TableCell>
-        <TableCell align="right">{row.carbs}</TableCell>
-        <TableCell align="right">{row.protein}</TableCell>
+        <TableCell align="left">{row.calories}</TableCell>
+        <TableCell align="left">{row.fat}</TableCell>
+        <TableCell align="left">{row.carbs}</TableCell>
+        <TableCell align="left">{row.protein}</TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -117,15 +121,19 @@ const rows = [
 export default function CollapsibleTable() {
   return (
     <TableContainer component={Paper}>
+      <div className={scss.tableHeader}>
+        <Typography fontSize={22}>Top Selling Products</Typography>
+        <MoreHorizIcon fontSize="large" />
+      </div>
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow>
             <TableCell />
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell>Product Name</TableCell>
+            <TableCell align="left">Date</TableCell>
+            <TableCell align="left">Transaction</TableCell>
+            <TableCell align="left">Amount</TableCell>
+            <TableCell align="left">Sales</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

@@ -1,4 +1,12 @@
-import { Card, Grid, Paper, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  Grid,
+  Paper,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import React from "react";
 import scss from "./TransactionPerDay.module.scss";
 import DataChart from "@/components/DataChart/DataChart";
@@ -21,7 +29,18 @@ const TransactionPerDay = () => {
     <Grid container gap={2} className={scss.wrapper}>
       <Paper className={scss.transactions}>
         <div className={scss.chart}>
-          <Typography>Transaction per month</Typography>
+          <section className={scss.chartHeader}>
+            <div>
+              <Typography fontSize={22}>General Sale Activity</Typography>
+            </div>
+            <div className={scss.chartFilter}>
+              <Typography sx={{ textDecoration: "underline" }}>
+                All Time
+              </Typography>
+              <Typography color={"lightslategrey"}>1 Month</Typography>
+              <Typography color={"lightslategrey"}>14 Days</Typography>
+            </div>
+          </section>
           <DataChart type={"line"} data={lineChartData} />
         </div>
         <div className={scss.cardWrapper}>
@@ -34,7 +53,9 @@ const TransactionPerDay = () => {
               </div>
               <div>
                 <div className={scss.cardTitle}>
-                  <Typography color={"lightslategrey"}>Average Revenue</Typography>
+                  <Typography color={"lightslategrey"}>
+                    Average Revenue
+                  </Typography>
                 </div>
                 <div className={scss.cardValue}>
                   <Typography fontSize={"22px"}>$1.378</Typography>
@@ -59,7 +80,9 @@ const TransactionPerDay = () => {
               </div>
               <div>
                 <div className={scss.cardTitle}>
-                  <Typography color={"lightslategrey"}>Buy-to-Detail</Typography>
+                  <Typography color={"lightslategrey"}>
+                    Buy-to-Detail
+                  </Typography>
                 </div>
                 <div className={scss.cardValue}>
                   <Typography fontSize={"22px"}>11,4%</Typography>
