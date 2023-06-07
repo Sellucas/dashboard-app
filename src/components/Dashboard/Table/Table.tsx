@@ -18,18 +18,20 @@ import { useTheme } from "@mui/material";
 
 function createData(
   name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
+  date: string,
+  transaction: number,
+  amount: string,
+  sales: string,
+  className: string,
   price: number
 ) {
   return {
     name,
-    calories,
-    fat,
-    carbs,
-    protein,
+    date,
+    transaction,
+    amount,
+    sales,
+    className,
     price,
     history: [
       {
@@ -66,10 +68,12 @@ function Row(props: { row: ReturnType<typeof createData> }) {
         <TableCell component="th" scope="row">
           {row.name}
         </TableCell>
-        <TableCell align="left">{row.calories}</TableCell>
-        <TableCell align="left">{row.fat}</TableCell>
-        <TableCell align="left">{row.carbs}</TableCell>
-        <TableCell align="left">{row.protein}</TableCell>
+        <TableCell align="left">{row.date}</TableCell>
+        <TableCell align="left">{row.transaction}</TableCell>
+        <TableCell align="left">{row.amount}</TableCell>
+        <TableCell align="left" className={`${scss[row.className]}`}>
+          {row.sales}
+        </TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -111,11 +115,29 @@ function Row(props: { row: ReturnType<typeof createData> }) {
 }
 
 const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0, 3.99),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3, 4.99),
-  createData("Eclair", 262, 16.0, 24, 6.0, 3.79),
-  createData("Cupcake", 305, 3.7, 67, 4.3, 2.5),
-  createData("Gingerbread", 356, 16.0, 49, 3.9, 1.5),
+  createData(
+    "LED Submersible Lights",
+    "Jan 18,2023",
+    26.0,
+    "$24,001",
+    "▲ 445%",
+    "cellPositive",
+    3.99
+  ),
+  createData("Scented Candles", "Mar 22,2023", 99.0, "$12,430", "▲ 155%", "cellPositive", 4.99),
+  createData(
+    "Portable Projector",
+    "Apr 27,2022",
+    66.0,
+    "$11,900",
+    "▼ 88.9%",
+    "cellNegative",
+    3.79
+  ),
+  createData("Smart Watch", "Fev 03,2023", 23.0, "$8,770", "▲ 81.2%", "cellPositive", 2.5),
+  createData("Phone Lenses", "Oct 09,2023", 16.0, "$8,120", "▼ 43.9%", "cellNegative", 1.5),
+  createData("Laptop Accessories", "Oct 11,2023", 16.0, "$200", "▲ 38.9%", "cellPositive", 1.5),
+  createData("Neck Massager", "Nov 29,2022", 6.0, "$110", "▼ 3.9%", "cellNegative", 1.5),
 ];
 
 export default function CollapsibleTable() {
