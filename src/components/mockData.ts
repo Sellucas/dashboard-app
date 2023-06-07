@@ -5,7 +5,7 @@ export const lineChartData = {
   datasets: [
     {
       label: "Online sales",
-      data: [65, 59, 80, 81, 56, 55, 60, 49, 112, 72, 52, 43],
+      data: [65, 59, 80, 81, 56, 55, 60, 49, 112, 72, 52, 87],
       fill: false,
       borderColor: "rgb(75, 192, 192)",
       tension: 0.1,

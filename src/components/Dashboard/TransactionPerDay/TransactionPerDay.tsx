@@ -85,9 +85,9 @@ const TransactionPerDay = () => {
                   </Typography>
                 </div>
                 <div className={scss.cardValue}>
-                  <Typography fontSize={"22px"}>11,4%</Typography>
+                  <Typography fontSize={"22px"}>110,4%</Typography>
                   <Typography color={theme.palette.error.main} fontSize={14}>
-                    ▼ 4.7%
+                    ▼ 40.7%
                   </Typography>
                 </div>
               </div>

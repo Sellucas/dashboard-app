@@ -123,7 +123,9 @@ export default function CollapsibleTable() {
     <TableContainer component={Paper}>
       <div className={scss.tableHeader}>
         <Typography fontSize={22}>Top Selling Products</Typography>
-        <MoreHorizIcon fontSize="large" />
+        <IconButton aria-label="delete" size="small">
+          <MoreHorizIcon fontSize="large" />
+        </IconButton>
       </div>
       <Table aria-label="collapsible table">
         <TableHead style={{ backgroundColor: "#161617" }}>
