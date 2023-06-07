@@ -126,7 +126,7 @@ export default function CollapsibleTable() {
         <MoreHorizIcon fontSize="large" />
       </div>
       <Table aria-label="collapsible table">
-        <TableHead>
+        <TableHead style={{ backgroundColor: "#161617" }}>
           <TableRow>
             <TableCell />
             <TableCell>Product Name</TableCell>

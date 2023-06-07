@@ -11,13 +11,25 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { signIn, signOut, useSession } from "next-auth/react";
-import ThemeToggleButton from "../ThemeToggleButton/ThemeToggleButton";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { Divider, useMediaQuery, useTheme } from "@mui/material";
 import NextLink from "next/link";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import Badge, { BadgeProps } from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
+import SearchIcon from "@mui/icons-material/Search";
 
 export type HeaderProps = {
   ColorModeContext: React.Context<{ toggleColorMode: () => void }>;
 };
+
+const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
+  "& .MuiBadge-badge": {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: "0 4px",
+  },
+}));
 
 const Header = (props: HeaderProps) => {
   const { ColorModeContext } = props;
@@ -40,7 +52,14 @@ const Header = (props: HeaderProps) => {
   const tabletCheck = useMediaQuery("(min-width: 768px");
 
   return (
-    <AppBar position="fixed" sx={{ marginBottom: "40px" }}>
+    <AppBar
+      position="fixed"
+      sx={{
+        marginBottom: "40px",
+        background: "#121212",
+        borderBottom: "1px solid #2F2F2F",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -81,12 +100,41 @@ const Header = (props: HeaderProps) => {
           </Typography>
 
           {tabletCheck && (
-            <Box sx={{ paddingRight: 5, marginLeft: "auto" }}>
-              <Typography>Signed in as {session?.user?.email} </Typography>
+            <Box
+              sx={{
+                paddingRight: 3,
+                marginLeft: "auto",
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <Box sx={{ paddingRight: 1 }}>
+                <IconButton aria-label="delete" size="large">
+                  <SearchIcon />
+                </IconButton>
+              </Box>
+              <Box sx={{ paddingRight: 3 }}>
+                <IconButton aria-label="delete" size="large">
+                  <StyledBadge badgeContent={4} color="error">
+                    <NotificationsIcon />
+                  </StyledBadge>
+                </IconButton>
+              </Box>
+              <Divider
+                orientation="vertical"
+                variant="middle"
+                flexItem
+                sx={{ marginRight: 3 }}
+              />
+              <Box>
+                <Typography>{session?.user?.name}</Typography>
+                <Typography fontSize={12} color={"lightslategrey"}>
+                  Super Admin
+                </Typography>
+              </Box>
             </Box>
           )}
 
-          <ThemeToggleButton ColorModeContext={ColorModeContext} />
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open profile settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
