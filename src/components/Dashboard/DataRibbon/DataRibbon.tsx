@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import scss from './DataRibbon.module.scss'
+import scss from "./DataRibbon.module.scss";
 import React from "react";
 import DataCard from "../DataCard/DataCard";
 
@@ -13,6 +13,7 @@ const DataRibbon = () => {
           description={
             "The totals of all QuickView products in the current financial year"
           }
+          icon="InsertChartIcon"
         />
       </Grid>
       <Grid>
@@ -20,6 +21,7 @@ const DataRibbon = () => {
           title={"Total Value"}
           value={"$73,732.53"}
           description={"The total sales of the current financial year"}
+          icon={"PaidIcon"}
         />
       </Grid>
       <Grid>
@@ -29,6 +31,7 @@ const DataRibbon = () => {
           description={
             "The average order value for all sales this current financial year"
           }
+          icon={"LocalMallIcon"}
         />
       </Grid>
       <Grid>
