@@ -51,6 +51,8 @@ const Header = (props: HeaderProps) => {
 
   const tabletCheck = useMediaQuery("(min-width: 768px");
 
+  const infoUser = tabletCheck && session ? true : false;
+
   return (
     <AppBar
       position="fixed"
@@ -99,7 +101,7 @@ const Header = (props: HeaderProps) => {
             QuickView
           </Typography>
 
-          {tabletCheck && (
+          {infoUser && (
             <Box
               sx={{
                 paddingRight: 3,
@@ -126,6 +128,7 @@ const Header = (props: HeaderProps) => {
                 flexItem
                 sx={{ marginRight: 3 }}
               />
+
               <Box>
                 <Typography>{session?.user?.name}</Typography>
                 <Typography fontSize={12} color={"lightslategrey"}>
@@ -133,8 +136,8 @@ const Header = (props: HeaderProps) => {
                 </Typography>
               </Box>
             </Box>
+            
           )}
-
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open profile settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

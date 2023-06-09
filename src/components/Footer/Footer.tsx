@@ -1,12 +1,10 @@
 import React from "react";
 import scss from "./Footer.module.scss";
-import { signIn, signOut, useSession } from "next-auth/react";
-import { Button, Paper, useTheme } from "@mui/material";
+import { Paper, useTheme } from "@mui/material";
 import styled from "@emotion/styled";
 import Link from "next/link";
 
 const Footer = () => {
-  const { data: session } = useSession();
   const theme = useTheme();
 
   const FooterLink = styled(Link)`
@@ -38,15 +36,6 @@ const Footer = () => {
             <FooterLink href={"/#accessibilitystatement"}>
               Accessibility statement
             </FooterLink>
-          </li>
-          <li>
-            <Button
-              variant={"text"}
-              color={session ? "error" : "success"}
-              onClick={() => (session ? signOut() : signIn())}
-            >
-              {session ? "Logout" : "Sign In"}
-            </Button>
           </li>
         </ul>
       </Paper>
