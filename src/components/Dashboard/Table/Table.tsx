@@ -124,7 +124,15 @@ const rows = [
     "cellPositive",
     3.99
   ),
-  createData("Scented Candles", "Mar 22,2023", 99.0, "$12,430", "▲ 155%", "cellPositive", 4.99),
+  createData(
+    "Scented Candles",
+    "Mar 22,2023",
+    99.0,
+    "$12,430",
+    "▲ 155%",
+    "cellPositive",
+    4.99
+  ),
   createData(
     "Portable Projector",
     "Apr 27,2022",
@@ -134,15 +142,47 @@ const rows = [
     "cellNegative",
     3.79
   ),
-  createData("Smart Watch", "Fev 03,2023", 23.0, "$8,770", "▲ 81.2%", "cellPositive", 2.5),
-  createData("Phone Lenses", "Oct 09,2023", 16.0, "$8,120", "▼ 43.9%", "cellNegative", 1.5),
-  createData("Laptop Accessories", "Oct 11,2023", 16.0, "$200", "▲ 38.9%", "cellPositive", 1.5),
-  createData("Neck Massager", "Nov 29,2022", 6.0, "$110", "▼ 3.9%", "cellNegative", 1.5),
+  createData(
+    "Smart Watch",
+    "Fev 03,2023",
+    23.0,
+    "$8,770",
+    "▲ 81.2%",
+    "cellPositive",
+    2.5
+  ),
+  createData(
+    "Phone Lenses",
+    "Oct 09,2023",
+    16.0,
+    "$8,120",
+    "▼ 43.9%",
+    "cellNegative",
+    1.5
+  ),
+  createData(
+    "Laptop Accessories",
+    "Oct 11,2023",
+    16.0,
+    "$200",
+    "▲ 38.9%",
+    "cellPositive",
+    1.5
+  ),
+  createData(
+    "Neck Massager",
+    "Nov 29,2022",
+    6.0,
+    "$110",
+    "▼ 3.9%",
+    "cellNegative",
+    1.5
+  ),
 ];
 
 export default function CollapsibleTable() {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} className={scss.table}>
       <div className={scss.tableHeader}>
         <Typography fontSize={22}>Top Selling Products</Typography>
         <IconButton aria-label="delete" size="small">
@@ -150,7 +190,7 @@ export default function CollapsibleTable() {
         </IconButton>
       </div>
       <Table aria-label="collapsible table">
-        <TableHead style={{ backgroundColor: "#161617" }}>
+        <TableHead style={{ backgroundColor: "#0d1113" }}>
           <TableRow>
             <TableCell />
             <TableCell>Product Name</TableCell>

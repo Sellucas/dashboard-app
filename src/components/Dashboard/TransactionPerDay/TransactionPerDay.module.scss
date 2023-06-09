@@ -8,6 +8,7 @@ $breakPoint: 1000px;
   display: block;
   padding: 1rem 2rem;
   width: 100%;
+  background-color: #161d20;
 
   @media screen and (min-width: $breakPoint) {
     display: flex;
@@ -45,6 +46,7 @@ $breakPoint: 1000px;
   padding: 1rem;
   border-radius: 8px;
   width: 100%;
+  background-color: #0d1113;
 
   @media screen and (min-width: $breakPoint) {
     padding: 0.8rem;

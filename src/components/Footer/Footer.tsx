@@ -13,7 +13,10 @@ const Footer = () => {
 
   return (
     <footer className={scss.footer}>
-      <Paper sx={{ width: "100%" }} color={"#262626"}>
+      <Paper
+        sx={{ width: "100%", backgroundColor: "#161d20" }}
+        variant="elevation"
+      >
         <ul role="menu">
           <li>
             <FooterLink href={"/"}>Home</FooterLink>

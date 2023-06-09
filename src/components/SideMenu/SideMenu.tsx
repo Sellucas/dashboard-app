@@ -112,7 +112,7 @@ const SideMenu = () => {
       </div>
 
       <Divider />
-      <List>
+      <List className={scss.list}>
         {menuListTranslations.map((text, index) => (
           <ListItem key={text} disablePadding sx={{ display: "block" }}>
             <NextLink

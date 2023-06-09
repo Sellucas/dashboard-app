@@ -44,7 +44,7 @@ const TransactionPerDay = () => {
           <DataChart type={"line"} data={lineChartData} />
         </div>
         <div className={scss.cardWrapper}>
-          <Card className={scss.card} variant={"outlined"}>
+          <Card className={scss.card} variant={"elevation"}>
             <div className={scss.cardSection}>
               <div className={scss.cardIcon}>
                 <Typography>
@@ -71,7 +71,7 @@ const TransactionPerDay = () => {
               </Typography>
             </div>
           </Card>
-          <Card className={scss.card} variant={"outlined"}>
+          <Card className={scss.card} variant={"elevation"}>
             <div className={scss.cardSection}>
               <div className={scss.cardIcon}>
                 <Typography>
@@ -98,7 +98,7 @@ const TransactionPerDay = () => {
               </Typography>
             </div>
           </Card>
-          <Card className={scss.card} variant={"outlined"}>
+          <Card className={scss.card} variant={"elevation"}>
             <div className={scss.cardSection}>
               <div className={scss.cardIcon}>
                 <Typography>

@@ -34,7 +34,7 @@ const DataCard = (props: DataCardProps) => {
   }
 
   return (
-    <Paper className={scss.dataCard}>
+    <Paper className={scss.dataCard} variant="elevation">
       <div className={scss.icon}>
         <IconButton aria-label="delete" size="large">
           <IconComponent fontSize="large" />
