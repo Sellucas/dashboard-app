@@ -190,7 +190,7 @@ export default function CollapsibleTable() {
         </IconButton>
       </div>
       <Table aria-label="collapsible table">
-        <TableHead style={{ backgroundColor: "#0d1113" }}>
+        <TableHead style={{ backgroundColor: "#161d20" }}>
           <TableRow>
             <TableCell />
             <TableCell>Product Name</TableCell>

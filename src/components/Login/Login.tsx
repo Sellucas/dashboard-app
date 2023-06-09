@@ -1,4 +1,4 @@
-import { Button, Chip } from "@mui/material";
+import { Button } from "@mui/material";
 import { useSession, signIn } from "next-auth/react";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -46,7 +46,7 @@ const Login = () => {
   const { data: session } = useSession();
 
   return (
-    <Container maxWidth="xs">
+    <Container maxWidth="xs" sx={{ backgroundColor: "#161d20", marginTop: 8, borderRadius: '10px' }}>
       <CssBaseline />
       <Box
         sx={{
@@ -65,10 +65,9 @@ const Login = () => {
 
         <Button
           fullWidth
-          color={"info"}
-          sx={{ mt: 3, mb: 2 }}
+          sx={{ mt: 3, mb: 2, backgroundColor: "#36498f" }}
           type="submit"
-          variant="outlined"
+          variant="contained"
           startIcon={<GoogleIcon />}
           onClick={() => signIn()}
         >
