@@ -9,7 +9,6 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Divider, useMediaQuery, useTheme } from "@mui/material";
 import NextLink from "next/link";
@@ -17,6 +16,8 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import Badge, { BadgeProps } from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
+import StackedBarChartSharpIcon from "@mui/icons-material/StackedBarChartSharp";
+import scss from './Header.module.scss'
 
 export type HeaderProps = {
   ColorModeContext: React.Context<{ toggleColorMode: () => void }>;
@@ -64,7 +65,10 @@ const Header = (props: HeaderProps) => {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <StackedBarChartSharpIcon
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+            fontSize="large"
+          />
           <Typography
             variant="h6"
             noWrap
@@ -73,16 +77,19 @@ const Header = (props: HeaderProps) => {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontWeight: 700,
-              letterSpacing: ".3rem",
+              fontWeight: 500,
               color: "inherit",
               textDecoration: "none",
-            }}
+                          }}
+            className={scss.logoName}
           >
             QuickView
           </Typography>
 
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <StackedBarChartSharpIcon
+            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+            fontSize="large"
+          />
           <Typography
             variant="h5"
             noWrap
@@ -92,11 +99,11 @@ const Header = (props: HeaderProps) => {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontWeight: 700,
-              letterSpacing: ".3rem",
+              fontWeight: 500,
               color: "inherit",
               textDecoration: "none",
             }}
+            
           >
             QuickView
           </Typography>

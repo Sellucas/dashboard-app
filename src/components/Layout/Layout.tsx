@@ -24,7 +24,7 @@ const Layout = (props: any) => {
         {session && <SideMenu />}
         {props.children}
       </main>
-      <Footer />
+      {session && <Footer />}
     </>
   );
 };

@@ -3,7 +3,6 @@ import { useSession, signIn } from "next-auth/react";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
 import Avatar from "@mui/material/Avatar";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -15,6 +14,8 @@ import Typography from "@mui/material/Typography";
 import GoogleIcon from "@mui/icons-material/Google";
 import Divider from "@mui/material/Divider";
 import { styled } from "@mui/material/styles";
+import scss from "./Login.module.scss";
+import StackedBarChartSharpIcon from "@mui/icons-material/StackedBarChartSharp";
 
 function Copyright(props: any) {
   return (
@@ -25,8 +26,8 @@ function Copyright(props: any) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://github.com/Sellucas" target="_blank">
+        Sellucas
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -46,28 +47,58 @@ const Login = () => {
   const { data: session } = useSession();
 
   return (
-    <Container maxWidth="xs" sx={{ backgroundColor: "#161d20", marginTop: 8, borderRadius: '10px' }}>
+    <Container
+      maxWidth="xs"
+      sx={{ backgroundColor: "#161d20", marginTop: 8, borderRadius: "10px" }}
+    >
       <CssBaseline />
       <Box
         sx={{
-          marginTop: 8,
+          marginTop: 6,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
+        <div className={scss.logo}>
+          <StackedBarChartSharpIcon sx={{ mr: 1 }} fontSize="medium" />
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              fontWeight: 500,
+              color: "inherit",
+              textDecoration: "none",
+            }}
+            className={scss.logoName}
+          >
+            QuickView
+          </Typography>
+        </div>
+        <div className={scss.header}>
+          <Typography component="h1" variant="h4" marginBottom={1}>
+            Login
+          </Typography>
+          <Typography color="lightslategray">
+            See your growth and get consulting support!
+          </Typography>
+        </div>
 
         <Button
           fullWidth
-          sx={{ mt: 3, mb: 2, backgroundColor: "#36498f" }}
+          sx={{
+            mt: 3,
+            mb: 2,
+            color: "white",
+            borderColor: "lightslategray",
+            marginBottom: 3,
+            marginTop: 5,
+          }}
           type="submit"
-          variant="contained"
+          variant="outlined"
           startIcon={<GoogleIcon />}
           onClick={() => signIn()}
         >
@@ -76,7 +107,7 @@ const Login = () => {
 
         <Root>
           <Divider>
-            <Typography color="primary">Or</Typography>
+            <Typography color="lightslategray">Or</Typography>
           </Divider>
         </Root>
 
@@ -100,30 +131,39 @@ const Login = () => {
             id="password"
             autoComplete="current-password"
           />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
+          <Grid container>
+            <Grid item xs>
+              <FormControlLabel
+                control={
+                  <Checkbox value="remember" sx={{ color: "#36498f" }} />
+                }
+                label="Remember me"
+              />
+            </Grid>
+            <Grid item>
+              <Link href="#" variant="body2" sx={{ color: "lightslategray" }}>
+                Forgot password?
+              </Link>
+            </Grid>
+          </Grid>
+
           <Button
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            sx={{ mt: 3, mb: 2, color: "white", backgroundColor: "#36498f" }}
           >
             Sign In
           </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" variant="body2" aria-disabled>
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
-          </Grid>
+
+          <Link
+            href="#"
+            variant="body2"
+            aria-disabled
+            sx={{ color: "lightslategray" }}
+          >
+            {"Don't have an account? Sign Up"}
+          </Link>
         </Box>
       </Box>
       <Copyright sx={{ mt: 8, mb: 4 }} />
