@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { useSession } from "next-auth/react";
 import React, { useState } from "react";
+import scss from "./Profile.module.scss";
 
 const Profile = () => {
   const { data: session } = useSession();
@@ -42,14 +43,14 @@ const Profile = () => {
   };
 
   return (
-    <>
-      <h1>Profile</h1>
-      <Box>
+    <div className={scss.container}>
+      <h1 className={scss.title}>Profile</h1>
+      <Box sx={{ maxWidth: "750px", margin: "auto" }}>
         <Typography variant={"h4"} sx={{ paddingBottom: 4 }}>
           Hey {session ? session?.user?.name : "User"}, welcome to your profile
           👋
         </Typography>
-        <Paper sx={{ padding: "1rem 2rem" }}>
+        <Paper sx={{ padding: "3rem 1rem", backgroundColor: "#050307" }}>
           <Grid container justifyContent="center">
             <Grid item xs={12} sm={8} md={6}>
               <Box display="flex" flexDirection="column" alignItems="center">
@@ -140,7 +141,11 @@ const Profile = () => {
                   </Grid>
 
                   <Grid item xs={12}>
-                    <Button type="submit" variant="contained" color="primary">
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      sx={{ backgroundColor: "#2c2547" }}
+                    >
                       Save Changes
                     </Button>
                   </Grid>
@@ -150,7 +155,7 @@ const Profile = () => {
           </Grid>
         </Paper>
       </Box>
-    </>
+    </div>
   );
 };
 
