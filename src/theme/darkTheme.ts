@@ -10,7 +10,7 @@ const darkTheme: ThemeOptions = {
       main: "#161d20",
     },
     background: {
-      default: '#080b0c'
+      default: '#0d0811'
     }
   },
 };

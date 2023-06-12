@@ -17,7 +17,7 @@ import Badge, { BadgeProps } from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import StackedBarChartSharpIcon from "@mui/icons-material/StackedBarChartSharp";
-import scss from './Header.module.scss'
+import scss from "./Header.module.scss";
 
 export type HeaderProps = {
   ColorModeContext: React.Context<{ toggleColorMode: () => void }>;
@@ -59,8 +59,7 @@ const Header = (props: HeaderProps) => {
       position="fixed"
       sx={{
         marginBottom: "40px",
-        background: "#161d20",
-        borderBottom: "1px solid #2F2F2F",
+        background: "#2C2547",
       }}
     >
       <Container maxWidth="xl">
@@ -80,7 +79,7 @@ const Header = (props: HeaderProps) => {
               fontWeight: 500,
               color: "inherit",
               textDecoration: "none",
-                          }}
+            }}
             className={scss.logoName}
           >
             QuickView
@@ -103,7 +102,6 @@ const Header = (props: HeaderProps) => {
               color: "inherit",
               textDecoration: "none",
             }}
-            
           >
             QuickView
           </Typography>
@@ -139,7 +137,7 @@ const Header = (props: HeaderProps) => {
 
                 <Box>
                   <Typography>{session?.user?.name}</Typography>
-                  <Typography fontSize={12} color={"lightslategrey"}>
+                  <Typography fontSize={12} color={"#D3D3D3"}>
                     Super Admin
                   </Typography>
                 </Box>

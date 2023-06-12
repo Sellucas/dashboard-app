@@ -5,7 +5,7 @@ import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import { Facebook, Instagram, Twitter } from "@mui/icons-material";
 import { Box } from "@mui/material";
-import scss from './Footer.module.scss'
+import scss from "./Footer.module.scss";
 import StackedBarChartSharpIcon from "@mui/icons-material/StackedBarChartSharp";
 
 export default function Footer() {
@@ -13,7 +13,7 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        background: "#2d3336",
+        background: "#050307",
         marginTop: "6rem",
         paddingBottom: "1rem",
       }}

@@ -44,7 +44,7 @@ const TransactionPerDay = () => {
           <DataChart type={"line"} data={lineChartData} />
         </div>
         <div className={scss.cardWrapper}>
-          <Card className={scss.card} variant={"elevation"}>
+          <Card className={scss.card} variant={"outlined"}>
             <div className={scss.cardSection}>
               <div className={scss.cardIcon}>
                 <Typography>
@@ -65,13 +65,8 @@ const TransactionPerDay = () => {
                 </div>
               </div>
             </div>
-            <div className={scss.cardLink}>
-              <Typography color={theme.palette.success.main} fontSize={"12px"}>
-                <LaunchIcon fontSize="inherit" /> Click Here
-              </Typography>
-            </div>
           </Card>
-          <Card className={scss.card} variant={"elevation"}>
+          <Card className={scss.card} variant={"outlined"}>
             <div className={scss.cardSection}>
               <div className={scss.cardIcon}>
                 <Typography>
@@ -92,13 +87,8 @@ const TransactionPerDay = () => {
                 </div>
               </div>
             </div>
-            <div className={scss.cardLink}>
-              <Typography color={theme.palette.success.main} fontSize={"12px"}>
-                <LaunchIcon fontSize="inherit" /> Click Here
-              </Typography>
-            </div>
           </Card>
-          <Card className={scss.card} variant={"elevation"}>
+          <Card className={scss.card} variant={"outlined"}>
             <div className={scss.cardSection}>
               <div className={scss.cardIcon}>
                 <Typography>
@@ -116,11 +106,6 @@ const TransactionPerDay = () => {
                   </Typography>
                 </div>
               </div>
-            </div>
-            <div className={scss.cardLink}>
-              <Typography color={theme.palette.success.main} fontSize={"12px"}>
-                <LaunchIcon fontSize="inherit" /> Click Here
-              </Typography>
             </div>
           </Card>
         </div>
