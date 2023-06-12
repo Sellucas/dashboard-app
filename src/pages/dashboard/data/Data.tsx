@@ -1,7 +1,9 @@
-import { LinearProgress } from "@mui/material";
+import { Button, LinearProgress } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { useDemoData } from "@mui/x-data-grid-generator";
 import React from "react";
+import scss from "./Data.module.scss";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 const Data = () => {
   const { data } = useDemoData({
@@ -12,8 +14,23 @@ const Data = () => {
 
   return (
     <>
-      <h1>Data</h1>
-      <div style={{ height: "900px", width: "100%" }}>
+      <div className={scss.header}>
+        <h1>Orders</h1>
+        <Button
+          variant="contained"
+          startIcon={<AddCircleOutlineIcon />}
+          sx={{
+            color: "white",
+            backgroundColor: "#2c2547",
+            fontSize: "16px",
+          }}
+        >
+          CREATE NEW
+        </Button>
+      </div>
+      <div
+        style={{ height: "900px", width: "100%", backgroundColor: "#050307" }}
+      >
         <DataGrid
           slots={{
             loadingOverlay: LinearProgress,
