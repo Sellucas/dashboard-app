@@ -43,9 +43,8 @@ const Profile = () => {
   };
 
   return (
-    <div className={scss.container}>
-      <h1 className={scss.title}>Profile</h1>
-      <Box sx={{ maxWidth: "750px", margin: "auto" }}>
+    <>
+      <Box sx={{ maxWidth: "750px", margin: "auto", marginTop: '6rem' }}>
         <Typography variant={"h4"} sx={{ paddingBottom: 4 }}>
           Hey {session ? session?.user?.name : "User"}, welcome to your profile
           👋
@@ -155,7 +154,7 @@ const Profile = () => {
           </Grid>
         </Paper>
       </Box>
-    </div>
+    </>
   );
 };
 
