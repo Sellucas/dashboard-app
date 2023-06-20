@@ -27,7 +27,7 @@ const TransactionPerDay = () => {
 
   return (
     <Grid container gap={2} className={scss.wrapper}>
-      <Paper className={scss.transactions}>
+      <Paper className={scss.transactions} variant="outlined">
         <div className={scss.chart}>
           <section className={scss.chartHeader}>
             <div>
@@ -44,7 +44,7 @@ const TransactionPerDay = () => {
           <DataChart type={"line"} data={lineChartData} />
         </div>
         <div className={scss.cardWrapper}>
-          <Card className={scss.card} variant={"outlined"}>
+          <Card className={scss.card} variant={"elevation"}>
             <div className={scss.cardSection}>
               <div className={scss.cardIcon}>
                 <Typography>
@@ -66,7 +66,7 @@ const TransactionPerDay = () => {
               </div>
             </div>
           </Card>
-          <Card className={scss.card} variant={"outlined"}>
+          <Card className={scss.card} variant={"elevation"}>
             <div className={scss.cardSection}>
               <div className={scss.cardIcon}>
                 <Typography>
@@ -88,7 +88,7 @@ const TransactionPerDay = () => {
               </div>
             </div>
           </Card>
-          <Card className={scss.card} variant={"outlined"}>
+          <Card className={scss.card} variant={"elevation"}>
             <div className={scss.cardSection}>
               <div className={scss.cardIcon}>
                 <Typography>

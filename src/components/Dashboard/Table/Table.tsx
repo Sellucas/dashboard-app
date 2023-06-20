@@ -182,7 +182,7 @@ const rows = [
 
 export default function CollapsibleTable() {
   return (
-    <TableContainer component={Paper} className={scss.table}>
+    <TableContainer component={Paper} className={scss.table} variant="elevation">
       <div className={scss.tableHeader}>
         <Typography fontSize={22}>Top Selling Products</Typography>
         <IconButton aria-label="delete" size="small">
@@ -190,7 +190,7 @@ export default function CollapsibleTable() {
         </IconButton>
       </div>
       <Table aria-label="collapsible table">
-        <TableHead style={{ backgroundColor: "#050307" }}>
+        <TableHead style={{ backgroundColor: "#2B2D3F" }}>
           <TableRow>
             <TableCell />
             <TableCell>Product Name</TableCell>

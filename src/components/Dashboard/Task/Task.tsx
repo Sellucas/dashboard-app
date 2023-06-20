@@ -10,7 +10,7 @@ import Card from "@mui/material/Card";
 
 export default function AlignItemsList() {
   return (
-    <Card sx={{ maxWidth: 345, bgcolor: "#050307" }} variant="elevation">
+    <Card sx={{ maxWidth: 345, bgcolor: "#2B2D3F", borderRadius: '16px' }} variant="outlined">
       <List>
         <ListItem alignItems="flex-start">
           <ListItemAvatar>

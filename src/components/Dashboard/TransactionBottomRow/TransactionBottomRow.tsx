@@ -11,8 +11,8 @@ import {
 
 const TransactionBottomRow = () => {
   return (
-    <>
-      <Typography marginTop={2} fontSize={22}>Different Types of Sales</Typography>
+    <Paper variant="outlined" className={scss.salesType}>
+      <Typography fontSize={22}>Different Types of Sales</Typography>
       <Grid container className={scss.bottomRow}>
         <Grid>
           <Paper className={scss.dataCard}>
@@ -42,7 +42,7 @@ const TransactionBottomRow = () => {
           </Paper>
         </Grid>
       </Grid>
-    </>
+    </Paper>
   );
 };
 

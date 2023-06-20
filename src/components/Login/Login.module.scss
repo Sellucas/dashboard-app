@@ -1,16 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
 .header {
   width: 100%;
-}
+  text-align: center;
 
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.logoName {
-  font-family: "Righteous", cursive;
+  h1 {
+    font-family: "Poppins", sans-serif;
+  }
 }

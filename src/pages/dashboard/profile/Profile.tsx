@@ -49,7 +49,7 @@ const Profile = () => {
           Hey {session ? session?.user?.name : "User"}, welcome to your profile
           👋
         </Typography>
-        <Paper sx={{ padding: "3rem 1rem", backgroundColor: "#050307" }}>
+        <Paper sx={{ padding: "3rem 1rem", backgroundColor: "#2B2D3F" }}>
           <Grid container justifyContent="center">
             <Grid item xs={12} sm={8} md={6}>
               <Box display="flex" flexDirection="column" alignItems="center">

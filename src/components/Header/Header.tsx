@@ -59,7 +59,7 @@ const Header = (props: HeaderProps) => {
       position="fixed"
       sx={{
         marginBottom: "40px",
-        background: "#2C2547",
+        background: "#2B2D3F",
       }}
     >
       <Container maxWidth="xl">

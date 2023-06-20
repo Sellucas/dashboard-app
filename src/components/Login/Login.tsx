@@ -49,41 +49,34 @@ const Login = () => {
   return (
     <Container
       maxWidth="xs"
-      sx={{ backgroundColor: "#161d20", marginTop: 8, borderRadius: "10px" }}
+      sx={{ backgroundColor: "#2B2D3F", marginTop: 8, borderRadius: "10px" }}
     >
       <CssBaseline />
       <Box
         sx={{
-          marginTop: 6,
+          marginTop: 2,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
-        <div className={scss.logo}>
-          <StackedBarChartSharpIcon sx={{ mr: 1 }} fontSize="medium" />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              fontWeight: 500,
-              color: "inherit",
-              textDecoration: "none",
-            }}
-            className={scss.logoName}
-          >
-            QuickView
-          </Typography>
-        </div>
         <div className={scss.header}>
-          <Typography component="h1" variant="h4" marginBottom={1}>
+          <Typography
+            component="h2"
+            variant="h6"
+            marginBottom={1}
+            sx={{ color: "lightslategray", p: 1 }}
+          >
             Login
           </Typography>
-          <Typography color="lightslategray">
-            See your growth and get consulting support!
+          <Divider variant="fullWidth" />
+          <Typography
+            component="h1"
+            variant="h4"
+            marginBottom={1}
+            sx={{ mt: 4 }}
+          >
+            Welcome back!
           </Typography>
         </div>
 
@@ -92,6 +85,8 @@ const Login = () => {
           sx={{
             mt: 3,
             mb: 2,
+            p: 1,
+            fontSize: "16px",
             color: "white",
             borderColor: "lightslategray",
             marginBottom: 3,
@@ -102,7 +97,7 @@ const Login = () => {
           startIcon={<GoogleIcon />}
           onClick={() => signIn()}
         >
-          Log in with Google
+          Sign in with Google
         </Button>
 
         <Root>
@@ -148,10 +143,18 @@ const Login = () => {
           </Grid>
 
           <Button
-            type="submit"
+            type="button"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2, color: "white", backgroundColor: "#36498f" }}
+            sx={{
+              mt: 3,
+              mb: 2,
+              p: 2,
+              borderRadius: 35,
+              fontSize: "18px",
+              color: "white",
+              backgroundColor: "#36498f",
+            }}
           >
             Sign In
           </Button>

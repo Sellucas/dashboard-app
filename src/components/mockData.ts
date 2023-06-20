@@ -7,7 +7,7 @@ export const lineChartData = {
       label: "Online sales",
       data: [65, 59, 80, 81, 56, 55, 60, 49, 112, 72, 52, 87],
       fill: false,
-      borderColor: "#5b3b78",
+      borderColor: "#36498f",
       tension: 0.1,
     },
     {

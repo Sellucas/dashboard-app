@@ -29,7 +29,7 @@ const Data = () => {
         </Button>
       </div>
       <div
-        style={{ height: "900px", width: "100%", backgroundColor: "#050307" }}
+        style={{ height: "900px", width: "100%", backgroundColor: "#2B2D3F" }}
       >
         <DataGrid
           slots={{

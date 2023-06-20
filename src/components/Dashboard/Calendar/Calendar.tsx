@@ -2,18 +2,23 @@ import * as React from "react";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import scss from "./Calendar.module.scss";
+import Paper from "@mui/material/Paper";
 
 export default function AddWeekNumber() {
   return (
-    <LocalizationProvider
-      dateAdapter={AdapterDayjs}
-      localeText={{
-        calendarWeekNumberHeaderText: "#",
-        calendarWeekNumberText: (weekNumber) => `${weekNumber}.`,
-      }}
+    <Paper
+      variant="outlined"
+      sx={{ p: 1, backgroundColor: "#2B2D3F", borderRadius: "16px" }}
     >
-      <DateCalendar displayWeekNumber className={scss.calendar} />
-    </LocalizationProvider>
+      <LocalizationProvider
+        dateAdapter={AdapterDayjs}
+        localeText={{
+          calendarWeekNumberHeaderText: "#",
+          calendarWeekNumberText: (weekNumber) => `${weekNumber}.`,
+        }}
+      >
+        <DateCalendar displayWeekNumber />
+      </LocalizationProvider>
+    </Paper>
   );
 }
