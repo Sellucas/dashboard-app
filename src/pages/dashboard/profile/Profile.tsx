@@ -44,12 +44,15 @@ const Profile = () => {
 
   return (
     <>
-      <Box sx={{ maxWidth: "750px", margin: "auto", marginTop: '6rem' }}>
+      <Box sx={{ maxWidth: "750px", margin: "auto", marginTop: "6rem" }}>
         <Typography variant={"h4"} sx={{ paddingBottom: 4 }}>
           Hey {session ? session?.user?.name : "User"}, welcome to your profile
           👋
         </Typography>
-        <Paper sx={{ padding: "3rem 1rem", backgroundColor: "#2B2D3F" }}>
+        <Paper
+          sx={{ padding: "3rem 1rem", backgroundColor: "#2B2D3F" }}
+          variant="outlined"
+        >
           <Grid container justifyContent="center">
             <Grid item xs={12} sm={8} md={6}>
               <Box display="flex" flexDirection="column" alignItems="center">
@@ -143,7 +146,7 @@ const Profile = () => {
                     <Button
                       type="submit"
                       variant="contained"
-                      sx={{ backgroundColor: "#2c2547" }}
+                      sx={{ backgroundColor: "#36498f", color: "white" }}
                     >
                       Save Changes
                     </Button>

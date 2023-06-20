@@ -21,7 +21,7 @@ const Data = () => {
           startIcon={<AddCircleOutlineIcon />}
           sx={{
             color: "white",
-            backgroundColor: "#2c2547",
+            backgroundColor: "#36498f",
             fontSize: "16px",
           }}
         >
