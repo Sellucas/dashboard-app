@@ -11,6 +11,14 @@ import {
 } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import { experimentalStyled as styled } from "@mui/material/styles";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
+import AccessibleIcon from "@mui/icons-material/Accessible";
+import ChatIcon from "@mui/icons-material/Chat";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import QuizIcon from "@mui/icons-material/Quiz";
+import GppGoodIcon from "@mui/icons-material/GppGood";
+import { ScaleRounded } from "@mui/icons-material";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -25,6 +33,9 @@ const Settings = () => {
   const [showProfit, setShowProfit] = React.useState(true);
   const [showOrders, setShowOrders] = React.useState(true);
   const [showCustomers, setShowCustomers] = React.useState(true);
+  const [showChatNotifications, setShowChatNotifications] =
+    React.useState(true);
+  const [makeDeal, setmakeDeal] = React.useState(true);
 
   const handleShowRevenueChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -50,77 +61,157 @@ const Settings = () => {
     setShowCustomers(event.target.checked);
   };
 
+  const handleChatNotifications = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setShowChatNotifications(event.target.checked);
+  };
+
+  const handleMakeDeal = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setmakeDeal(event.target.checked);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // TODO: handle form submission
   };
+
+  const settingsBox = [
+    {
+      icon: <AccountBalanceIcon fontSize="large" />,
+      title: "Politics",
+      index: 1,
+    },
+    {
+      icon: <AddLocationAltIcon fontSize="large" />,
+      title: "Localization",
+      index: 2,
+    },
+    {
+      icon: <AccessibleIcon fontSize="large" />,
+      title: "Accessible",
+      index: 3,
+    },
+    {
+      icon: <ChatIcon fontSize="large" />,
+      title: "Chat",
+      index: 4,
+    },
+    {
+      icon: <SupportAgentIcon fontSize="large" />,
+      title: "Support",
+      index: 5,
+    },
+    {
+      icon: <QuizIcon fontSize="large" />,
+      title: "FAQ",
+      index: 6,
+    },
+    {
+      icon: <GppGoodIcon fontSize="large" />,
+      title: "Security",
+      index: 7,
+    },
+  ];
+
+  const settingCard = [
+    {
+      title: "Revenue",
+      task: handleShowRevenueChange,
+      status: showRevenue,
+    },
+    {
+      title: "Show Profit",
+      task: handleShowProfitChange,
+      status: showProfit,
+    },
+    {
+      title: "Show Orders",
+      task: handleShowOrdersChange,
+      status: showOrders,
+    },
+    {
+      title: "Show Customers",
+      task: handleShowCustomersChange,
+      status: showCustomers,
+    },
+    {
+      title: "Chat Notifications",
+      task: handleChatNotifications,
+      status: showChatNotifications,
+    },
+    {
+      title: "Make a deal",
+      task: handleMakeDeal,
+      status: makeDeal,
+    },
+  ];
+
   return (
     <>
       <Box sx={{ marginTop: "6rem" }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom marginBottom={6}>
           Dashboard Features
         </Typography>
         <form onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
+          <Grid
+            container
+            spacing={2}
+            sx={{ display: "flex", justifyContent: "space-between" }}
+          >
             <Box>
               <Grid
                 container
                 spacing={{ xs: 2, md: 3 }}
-                columns={{ xs: 4, sm: 8, md: 12 }}
+                columns={{ xs: 2, sm: 8, md: 12 }}
               >
-                {Array.from(Array(7)).map((_, index) => (
-                  <Grid item xs={2} sm={4} md={4} key={index}>
-                    <Item>xs=2</Item>
-                  </Grid>
-                ))}
+                {settingsBox.map((menuItem) => {
+                  return (
+                    <Grid item xs={2} sm={4} md={4}>
+                      <Item
+                        key={menuItem.index}
+                        sx={{
+                          backgroundColor: "#2B2D3F",
+                          py: 8,
+                          cursor: "pointer",
+                          "&:hover": {
+                            opacity: 0.7,
+                          },
+                        }}
+                      >
+                        <div>
+                          {menuItem.icon}
+                          <Typography variant="h6">{menuItem.title}</Typography>
+                        </div>
+                      </Item>
+                    </Grid>
+                  );
+                })}
               </Grid>
             </Box>
 
             <Box>
               <Grid item xs={12}>
                 <FormControl component="fieldset">
-                  <FormGroup>
-                    <FormControlLabel
-                      control={
-                        <Switch
-                          checked={showRevenue}
-                          onChange={handleShowRevenueChange}
+                  {settingCard.map((menuItem) => {
+                    const { title, task, status } = menuItem;
+                    return (
+                      <FormGroup sx={{ marginBottom: 6 }}>
+                        <FormControlLabel
+                          control={<Switch checked={status} onChange={task} />}
+                          label={title}
+                          labelPlacement="end"
+                          sx={{
+                            backgroundColor: "#2B2D3F",
+                            py: 4,
+                            pr: 22,
+                            pl: 2,
+                            borderRadius: "8px",
+                          }}
                         />
-                      }
-                      label="Revenue"
-                      labelPlacement="start"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Switch
-                          checked={showProfit}
-                          onChange={handleShowProfitChange}
-                        />
-                      }
-                      label="Profit"
-                      labelPlacement="start"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Switch
-                          checked={showOrders}
-                          onChange={handleShowOrdersChange}
-                        />
-                      }
-                      label="Orders"
-                      labelPlacement="start"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Switch
-                          checked={showCustomers}
-                          onChange={handleShowCustomersChange}
-                        />
-                      }
-                      label="Customers"
-                      labelPlacement="start"
-                    />
-                  </FormGroup>
+                      </FormGroup>
+                    );
+                  })}
                 </FormControl>
               </Grid>
               <Grid item xs={12}>

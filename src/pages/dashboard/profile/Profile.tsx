@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import { useSession } from "next-auth/react";
 import React, { useState } from "react";
-import scss from "./Profile.module.scss";
 
 const Profile = () => {
   const { data: session } = useSession();
