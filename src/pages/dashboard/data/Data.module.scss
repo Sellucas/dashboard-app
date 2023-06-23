@@ -9,3 +9,15 @@
     padding: 15px 20px;
   }
 }
+
+.modal {
+  h2 {
+    text-align: center;
+  }
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+  }
+}

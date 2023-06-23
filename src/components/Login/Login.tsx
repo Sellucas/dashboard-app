@@ -2,7 +2,6 @@ import { Button } from "@mui/material";
 import { useSession, signIn } from "next-auth/react";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
-import Avatar from "@mui/material/Avatar";
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -15,7 +14,8 @@ import GoogleIcon from "@mui/icons-material/Google";
 import Divider from "@mui/material/Divider";
 import { styled } from "@mui/material/styles";
 import scss from "./Login.module.scss";
-import StackedBarChartSharpIcon from "@mui/icons-material/StackedBarChartSharp";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.min.css';
 
 function Copyright(props: any) {
   return (
@@ -45,6 +45,17 @@ const Root = styled("div")(({ theme }) => ({
 
 const Login = () => {
   const { data: session } = useSession();
+  const notify = () =>
+    toast("Please, sign in with Google account!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
   return (
     <Container
@@ -155,6 +166,7 @@ const Login = () => {
               color: "white",
               backgroundColor: "#36498f",
             }}
+            onClick={notify}
           >
             Sign In
           </Button>
@@ -164,11 +176,24 @@ const Login = () => {
             variant="body2"
             aria-disabled
             sx={{ color: "lightslategray" }}
+            onClick={() => signIn()}
           >
             {"Don't have an account? Sign Up"}
           </Link>
         </Box>
       </Box>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Copyright sx={{ mt: 8, mb: 4 }} />
     </Container>
   );

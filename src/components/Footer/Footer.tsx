@@ -16,6 +16,7 @@ export default function Footer() {
         background: "#2B2D3F",
         marginTop: "6rem",
         paddingBottom: "1rem",
+        paddingLeft: "4rem",
       }}
     >
       <Container maxWidth="lg">
