@@ -60,11 +60,11 @@ const menuListTranslations = [
   "Sign Out",
 ];
 const menuListIcons = [
-  <HomeIcon />,
-  <EqualizerIcon />,
-  <Person2Icon />,
-  <Settings />,
-  <ExitToAppIcon />,
+  <HomeIcon key={1} />,
+  <EqualizerIcon key={2} />,
+  <Person2Icon key={3} />,
+  <Settings key={4} />,
+  <ExitToAppIcon key={5} />,
 ];
 
 const SideMenu = () => {
@@ -118,7 +118,6 @@ const SideMenu = () => {
             <NextLink
               className={scss.link}
               href={`/dashboard/${menuRouteList[index]}`}
-              key={index}
             >
               <ListItemButton
                 onClick={() => handleListItemButtonClick(text)}
@@ -129,7 +128,6 @@ const SideMenu = () => {
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
                 }}
-                key={index}
               >
                 <ListItemIcon
                   sx={{
@@ -137,7 +135,6 @@ const SideMenu = () => {
                     mr: open ? 3 : "auto",
                     justifyContent: "center",
                   }}
-                  key={index}
                 >
                   {menuListIcons[index]}
                 </ListItemIcon>
