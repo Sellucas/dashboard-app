@@ -10,7 +10,10 @@ import Card from "@mui/material/Card";
 
 export default function AlignItemsList() {
   return (
-    <Card sx={{ maxWidth: 345, bgcolor: "#2B2D3F", borderRadius: '16px' }} variant="outlined">
+    <Card
+      sx={{ maxWidth: 345, bgcolor: "#2B2D3F", borderRadius: "16px" }}
+      variant="outlined"
+    >
       <List>
         <ListItem alignItems="flex-start">
           <ListItemAvatar>
@@ -62,6 +65,28 @@ export default function AlignItemsList() {
           </ListItemAvatar>
           <ListItemText
             primary="Oui Oui"
+            secondary={
+              <React.Fragment>
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body2"
+                  color="text.primary"
+                >
+                  Sandra Adams
+                </Typography>
+                {" — Do you have Paris recommendations? Have you ever…"}
+              </React.Fragment>
+            }
+          />
+        </ListItem>
+        <Divider variant="inset" component="li" />
+        <ListItem alignItems="flex-start">
+          <ListItemAvatar>
+            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+          </ListItemAvatar>
+          <ListItemText
+            primary="Lorem"
             secondary={
               <React.Fragment>
                 <Typography
