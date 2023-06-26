@@ -5,10 +5,17 @@ import darkTheme from "@/theme/darkTheme";
 import lightTheme from "@/theme/lightTheme";
 import Header from "@/components/Header/Header";
 import Layout from "@/components/Layout/Layout";
+import { AppProps } from "next/app";
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
-const App = ({ Component, pageProps: { session, ...pageProps } }) => {
+type MyAppProps = {
+  Component: AppProps["Component"];
+  pageProps: AppProps["pageProps"];
+  session: any;
+};
+
+const App: React.FC<MyAppProps> = ({ Component, pageProps, session }) => {
   const [mode, setMode] = React.useState<"light" | "dark">("dark");
   const colorMode = React.useMemo(
     () => ({
