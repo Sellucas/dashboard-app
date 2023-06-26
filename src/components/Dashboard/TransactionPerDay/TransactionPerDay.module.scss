@@ -90,6 +90,10 @@ $breakPoint: 1000px;
   flex-direction: row;
   justify-content: space-between;
 
+  @media screen and (max-width: 550px) {
+    flex-direction: column;
+  }
+
   div {
     display: flex;
     flex-direction: row;
