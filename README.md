@@ -4,7 +4,7 @@
 
 ## 💾 Sobre
 
-**QuickViewe** é uma ferramenta que simplifica a gestão de informações importantes para o negócio. Apresenta dados de maneira visual e organizada, facilitando a compreensão e análise das métricas de desempenho. Com isso, tanto os gestores quanto os colaboradores podem identificar pontos de melhoria estratégica de forma clara e objetiva.
+**QuickView** é uma ferramenta que simplifica a gestão de informações importantes para o negócio. Apresenta dados de maneira visual e organizada, facilitando a compreensão e análise das métricas de desempenho. Com isso, tanto os gestores quanto os colaboradores podem identificar pontos de melhoria estratégica de forma clara e objetiva.
 
 O deployment foi feita com o Vercel e está disponível [aqui](https://github.com/Sellucas)
 
