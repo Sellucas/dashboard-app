@@ -21,17 +21,16 @@ export const lineChartData = {
 };
 
 export const doughnutChartDataUserType = {
-  labels: ["Person", "Company", "Industry", "Commerce", "Personal Sales"],
+  labels: ["Person", "Company", "Commerce", "Personal Sales"],
   datasets: [
     {
       label: "Transactions Dataset",
-      data: [200, 50, 400, 480, 90],
+      data: [200, 50, 400, 480],
       backgroundColor: [
         "rgb(0,171,197)",
         "rgb(178,229,237)",
         "rgb(255,255,0)",
         "rgb(255,146,72)",
-        "rgb(214,45,32)",
       ],
       hoverOffset: 4,
     },
@@ -39,12 +38,12 @@ export const doughnutChartDataUserType = {
 };
 
 export const doughnutChartDataRevenue = {
-  labels: ["Earn", "Spend"],
+  labels: ["Earn", "Spend", "Donate/Bonus"],
   datasets: [
     {
       label: "Transactions Dataset",
-      data: [80, 20],
-      backgroundColor: ["rgb(0,171,197)", "rgb(255,255,0)"],
+      data: [80, 20, 20],
+      backgroundColor: ["rgb(0,171,197)", "rgb(255,255,0)", "rgb(214,45,32)"],
       hoverOffset: 4,
     },
   ],
