@@ -17,7 +17,7 @@ export default function AlignItemsList() {
       <List>
         <ListItem alignItems="flex-start">
           <ListItemAvatar>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+            <Avatar>A</Avatar>
           </ListItemAvatar>
           <ListItemText
             primary="Brunch this weekend?"
@@ -39,7 +39,7 @@ export default function AlignItemsList() {
         <Divider variant="inset" component="li" />
         <ListItem alignItems="flex-start">
           <ListItemAvatar>
-            <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+            <Avatar>C</Avatar>
           </ListItemAvatar>
           <ListItemText
             primary="Summer BBQ"
@@ -61,7 +61,7 @@ export default function AlignItemsList() {
         <Divider variant="inset" component="li" />
         <ListItem alignItems="flex-start">
           <ListItemAvatar>
-            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+            <Avatar>B</Avatar>
           </ListItemAvatar>
           <ListItemText
             primary="Oui Oui"
@@ -83,7 +83,7 @@ export default function AlignItemsList() {
         <Divider variant="inset" component="li" />
         <ListItem alignItems="flex-start">
           <ListItemAvatar>
-            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+            <Avatar>H</Avatar>
           </ListItemAvatar>
           <ListItemText
             primary="Lorem"

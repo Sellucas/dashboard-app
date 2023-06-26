@@ -167,9 +167,8 @@ const Settings = () => {
               >
                 {settingsBox.map((menuItem) => {
                   return (
-                    <Grid item xs={2} sm={4} md={4}>
+                    <Grid key={menuItem.index} item xs={2} sm={4} md={4}>
                       <Item
-                        key={menuItem.index}
                         sx={{
                           backgroundColor: "#2B2D3F",
                           py: 8,
@@ -200,6 +199,7 @@ const Settings = () => {
                         sx={{
                           marginBottom: 6,
                         }}
+                        key={title}
                       >
                         <FormControlLabel
                           control={<Switch checked={status} onChange={task} />}
