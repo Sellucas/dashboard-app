@@ -71,7 +71,7 @@ const Settings = () => {
     setmakeDeal(event.target.checked);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     // TODO: handle form submission
   };
