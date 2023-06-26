@@ -1,4 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# QuickView Data Dashboard
+
+![quickview-readme](https://github.com/Sellucas/restaurant-website/assets/75432770/5e103d5e-f4c9-412e-b3c7-d18cbeda30fe)
+
+## 💾 Sobre
+
+**QuickView** é uma ferramenta que simplifica a gestão de informações importantes para o negócio. Apresenta dados de maneira visual e organizada, facilitando a compreensão e análise das métricas de desempenho. Com isso, tanto os gestores quanto os colaboradores podem identificar pontos de melhoria estratégica de forma clara e objetiva.
+
+O deployment foi feita com o Vercel e está disponível [aqui](https://github.com/Sellucas)
+
+## 🚀 Tecnologias
+
+**QuickView** foi desenvolvido utilizando as seguintes tecnologias:
+
+- Next.js
+- Typescript
+- MUI
+- Sass
+- Storybook
+- React-toastify
+- Chart.js
 
 ## Getting Started
 
