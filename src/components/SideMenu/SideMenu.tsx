@@ -118,6 +118,7 @@ const SideMenu = () => {
             <NextLink
               className={scss.link}
               href={`/dashboard/${menuRouteList[index]}`}
+              key={index}
             >
               <ListItemButton
                 onClick={() => handleListItemButtonClick(text)}
@@ -128,6 +129,7 @@ const SideMenu = () => {
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
                 }}
+                key={index}
               >
                 <ListItemIcon
                   sx={{
@@ -135,6 +137,7 @@ const SideMenu = () => {
                     mr: open ? 3 : "auto",
                     justifyContent: "center",
                   }}
+                  key={index}
                 >
                   {menuListIcons[index]}
                 </ListItemIcon>
