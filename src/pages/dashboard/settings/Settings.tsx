@@ -156,7 +156,7 @@ const Settings = () => {
         <form onSubmit={handleSubmit}>
           <Grid
             container
-            spacing={2}
+            spacing={1}
             sx={{ display: "flex", justifyContent: "space-between" }}
           >
             <Box>
@@ -190,22 +190,28 @@ const Settings = () => {
               </Grid>
             </Box>
 
-            <Box>
+            <Box sx={{ marginLeft: 4, marginTop: 4 }}>
               <Grid item xs={12}>
                 <FormControl component="fieldset">
                   {settingCard.map((menuItem) => {
                     const { title, task, status } = menuItem;
                     return (
-                      <FormGroup sx={{ marginBottom: 6 }}>
+                      <FormGroup
+                        sx={{
+                          marginBottom: 6,
+                        }}
+                      >
                         <FormControlLabel
                           control={<Switch checked={status} onChange={task} />}
                           label={title}
                           labelPlacement="end"
                           sx={{
                             backgroundColor: "#2B2D3F",
+                            maxWidth: "400px",
+                            width: "100%",
                             py: 4,
-                            pr: 22,
                             pl: 2,
+                            pr: 2,
                             borderRadius: "8px",
                           }}
                         />

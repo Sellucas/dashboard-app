@@ -3,8 +3,21 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import Paper from "@mui/material/Paper";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import dayjs from "dayjs";
 
 export default function AddWeekNumber() {
+  const [isDesktop, setDesktop] = React.useState(window.innerWidth > 650);
+
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 650);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  });
+
   return (
     <Paper
       variant="outlined"
@@ -17,7 +30,11 @@ export default function AddWeekNumber() {
           calendarWeekNumberText: (weekNumber) => `${weekNumber}.`,
         }}
       >
-        <DateCalendar displayWeekNumber />
+        {isDesktop ? (
+          <DateCalendar displayWeekNumber />
+        ) : (
+          <DatePicker defaultValue={dayjs("2023-06-27")} />
+        )}
       </LocalizationProvider>
     </Paper>
   );

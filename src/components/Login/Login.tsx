@@ -15,7 +15,7 @@ import Divider from "@mui/material/Divider";
 import { styled } from "@mui/material/styles";
 import scss from "./Login.module.scss";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.min.css';
+import "react-toastify/dist/ReactToastify.min.css";
 
 function Copyright(props: any) {
   return (

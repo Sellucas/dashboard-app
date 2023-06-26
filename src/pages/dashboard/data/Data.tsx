@@ -17,22 +17,36 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Divider from "@mui/material/Divider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const style = {
   position: "absolute" as "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 550,
+  maxWidth: 550,
+  width: "100%",
   bgcolor: "#212233",
   boxShadow: 24,
   p: 4,
   display: "flex",
   flexDirection: "column",
-  borderRadius: "16px"
+  borderRadius: "16px",
 };
 
 const Data = () => {
+  const notify = () =>
+    toast.success("New order created!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -221,15 +235,18 @@ const Data = () => {
                 type="button"
                 variant="contained"
                 sx={{
-                  width: 120,
                   py: 2,
-                  px: 14,
+                  maxWidth: 220,
+                  width: "100%",
                   borderRadius: 3,
                   fontSize: "16px",
                   color: "white",
                   backgroundColor: "#36498f",
                 }}
-                onClick={handleClose}
+                onClick={() => {
+                  notify();
+                  handleClose();
+                }}
               >
                 Submit
               </Button>
@@ -246,6 +263,18 @@ const Data = () => {
           }}
           loading={!data}
           {...data}
+        />
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
         />
       </div>
     </>
