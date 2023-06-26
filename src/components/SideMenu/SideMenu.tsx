@@ -118,7 +118,6 @@ const SideMenu = () => {
             <NextLink
               className={scss.link}
               href={`/dashboard/${menuRouteList[index]}`}
-              key={index}
             >
               <ListItemButton
                 onClick={() => handleListItemButtonClick(text)}
