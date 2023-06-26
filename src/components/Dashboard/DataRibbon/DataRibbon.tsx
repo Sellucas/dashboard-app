@@ -39,6 +39,7 @@ const DataRibbon = () => {
           title={"Conversion Rate"}
           value={"0.61%"}
           description={"How many pitches become sales"}
+          icon={"AutorenewIcon"}
         />
       </Grid>
     </Grid>
