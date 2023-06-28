@@ -9,7 +9,7 @@ export const authOptions: NextAuthOptions = {
       authorization: {
         params: {
           prompt: "consent",
-          acess_type: "offline",
+          access_type: "offline",
           response_type: "code",
         },
       },
