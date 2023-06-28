@@ -20,7 +20,9 @@ const Dashboard = () => {
       <TransactionBottomRow />
 
       <div>
-        <Typography fontSize={22} marginTop={4}>Social Area</Typography>
+        <Typography fontSize={22} marginTop={4}>
+          Social Area
+        </Typography>
       </div>
       <Grid container gap={4} marginTop={4} marginBottom={4}>
         <CardMidia />

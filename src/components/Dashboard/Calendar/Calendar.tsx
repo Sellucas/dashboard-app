@@ -7,16 +7,19 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs from "dayjs";
 
 export default function AddWeekNumber() {
-  const [isDesktop, setDesktop] = React.useState(window.innerWidth > 650);
+  const [isDesktop, setDesktop] = React.useState(false);
 
   const updateMedia = () => {
     setDesktop(window.innerWidth > 650);
   };
 
   React.useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
-  });
+    if (typeof window !== "undefined") {
+      updateMedia();
+      window.addEventListener("resize", updateMedia);
+      return () => window.removeEventListener("resize", updateMedia);
+    }
+  }, []);
 
   return (
     <Paper
